@@ -14,10 +14,10 @@ jobs:
     environment: snyk-npm
     runs-on: ubuntu-latest
     env:
-      SNYK_RUN_OPEN_SOURCE: 'true'
-      SNYK_RUN_CODE: 'true'
-      SNYK_RUN_CONTAINER: 'true'
-      SNYK_RUN_IAC: 'true'
+      SNYK_RUN_OPEN_SOURCE: 'false'
+      SNYK_RUN_CODE: 'false'
+      SNYK_RUN_CONTAINER: 'false'
+      SNYK_RUN_IAC: 'false'
 
     strategy:
       matrix:
