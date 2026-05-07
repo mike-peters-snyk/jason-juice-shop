@@ -3,7 +3,10 @@
 name: Snyk SCA, Code, IaC and Container CLI monitor example
 
 on:
-  workflow_dispatch:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
   build:
@@ -11,10 +14,10 @@ jobs:
     environment: snyk-npm
     runs-on: ubuntu-latest
     env:
-      SNYK_RUN_OPEN_SOURCE: 'false'
-      SNYK_RUN_CODE: 'false'
-      SNYK_RUN_CONTAINER: 'false'
-      SNYK_RUN_IAC: 'false'
+      SNYK_RUN_OPEN_SOURCE: 'true'
+      SNYK_RUN_CODE: 'true'
+      SNYK_RUN_CONTAINER: 'true'
+      SNYK_RUN_IAC: 'true'
 
     strategy:
       matrix:
