@@ -97,6 +97,7 @@ import { addMemory, getMemories } from './routes/memory'
 import { changePassword } from './routes/changePassword'
 import { countryMapping } from './routes/countryMapping'
 import { retrieveAppVersion } from './routes/appVersion'
+import { retrieveStatus } from './routes/status'
 import { captchas, verifyCaptcha } from './routes/captcha'
 import * as restoreProgress from './routes/restoreProgress'
 import { checkKeys, nftUnlocked } from './routes/checkKeys'
@@ -602,6 +603,7 @@ restoreOverwrittenFilesWithOriginals().then(() => {
   app.get('/rest/basket/:id', retrieveBasket())
   app.post('/rest/basket/:id/checkout', placeOrder())
   app.put('/rest/basket/:id/coupon/:coupon', applyCoupon())
+  app.get('/rest/status', retrieveStatus())
   app.get('/rest/admin/application-version', retrieveAppVersion())
   app.get('/rest/admin/application-configuration', retrieveAppConfiguration())
   app.get('/rest/repeat-notification', repeatNotification())

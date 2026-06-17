@@ -7,6 +7,17 @@ This guide helps contributors use Claude (AI assistant) effectively when working
 > * Codeium ([`.codeium/instructions.md`](../.codeium/instructions.md))
 > * Continue.dev ([`.continue/instructions.md`](../.continue/instructions.md))
 
+## MANDATORY: Security Scanning
+
+**This is a hard requirement, not optional.** After writing or modifying any code:
+
+1. Run `snyk_code_scan` on the changed files immediately — before summarizing, before moving on.
+2. If issues are found in newly introduced or modified code, fix them using the Snyk results as context.
+3. Rescan after fixing to confirm issues are resolved and no new ones were introduced.
+4. Repeat until clean.
+
+Do not consider a coding task complete until the scan passes.
+
 ## Before You Start
 
 Claude can assist with various development tasks, but all contributions must still meet the requirements in [CONTRIBUTING.md](../CONTRIBUTING.md). The AI is a tool to enhance productivity, not a replacement for understanding the codebase and contribution guidelines.
@@ -214,9 +225,3 @@ Learn more: [Code Snippets Documentation](https://pwning.owasp-juice.shop/compan
 
 Claude is a powerful tool for productivity, but you are responsible for the quality and correctness of your contributions. Always review, test, and understand the code before submitting.
 
-## Security Scanning
-
-- Always run **snyk_code_scan** after writing or modifying code in a Snyk-supported language.
-- If any issues are found in newly introduced or modified code, fix them using the Snyk results as context.
-- Rescan after fixing to confirm the issues are resolved and no new ones were introduced.
-- Repeat until no new issues remain.
