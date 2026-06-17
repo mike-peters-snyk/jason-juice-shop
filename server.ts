@@ -102,7 +102,6 @@ import * as restoreProgress from './routes/restoreProgress'
 import { checkKeys, nftUnlocked } from './routes/checkKeys'
 import { retrieveLoggedInUser } from './routes/currentUser'
 import authenticatedUsers from './routes/authenticatedUsers'
-import { retrieveUsers } from './routes/userList'
 import { securityQuestion } from './routes/securityQuestion'
 import { servePremiumContent } from './routes/premiumReward'
 import { contractExploitListener } from './routes/web3Wallet'
@@ -599,7 +598,6 @@ restoreOverwrittenFilesWithOriginals().then(() => {
   app.get('/rest/user/security-question', securityQuestion())
   app.get('/rest/user/whoami', security.updateAuthenticatedUsers(), retrieveLoggedInUser())
   app.get('/rest/user/authentication-details', authenticatedUsers())
-  app.get('/rest/users', retrieveUsers)
   app.get('/rest/products/search', searchProducts())
   app.get('/rest/basket/:id', retrieveBasket())
   app.post('/rest/basket/:id/checkout', placeOrder())
