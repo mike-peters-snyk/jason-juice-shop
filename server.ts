@@ -110,6 +110,7 @@ import { updateUserProfile } from './routes/updateUserProfile'
 import { getVideo, promotionVideo } from './routes/videoHandler'
 import { likeProductReviews } from './routes/likeProductReviews'
 import { repeatNotification } from './routes/repeatNotification'
+import { snykDemoEcho } from './routes/snykDemoEcho'
 import { serveQuarantineFiles } from './routes/quarantineServer'
 import { showProductReviews } from './routes/showProductReviews'
 import { nftMintListener, walletNFTVerify } from './routes/nftMint'
@@ -607,6 +608,7 @@ restoreOverwrittenFilesWithOriginals().then(() => {
   app.get('/rest/admin/application-version', retrieveAppVersion())
   app.get('/rest/admin/application-configuration', retrieveAppConfiguration())
   app.get('/rest/repeat-notification', repeatNotification())
+  app.get('/rest/demo/snyk-echo', snykDemoEcho())
   app.get('/rest/continue-code', continueCode())
   app.get('/rest/continue-code-findIt', continueCodeFindIt())
   app.get('/rest/continue-code-fixIt', continueCodeFixIt())
